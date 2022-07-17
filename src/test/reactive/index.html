@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+ 
+  
+  <div id="app">
+     <p key="112"> hhha {{name}}hello</p>
+     <span key="132">{{arr}} </span>
+  </div>
+
+  <script src="../../../dist/vue.js"></script>
+  <script>
+    let vm = new Vue({
+      data(){
+        return {
+          name:'哈哈哈',
+          arr:[1,2,3]
+        }
+      },
+      // render(h){
+      //     return h('div')
+      // }
+      // data:{
+      //   name:'s'
+      // }
+    })
+    vm.$mount('#app')
+    vm.$watch('name',function(newVal,oldVal){
+      console.log("🚀 ~ file: index.html ~ line 37 ~ vm.$watch ~ name",newVal,oldVal)
+
+    })
+    setTimeout(()=>{
+      vm.name = '小明'
+    },2000)
+
+
+
+  </script>
+  
+</body>
+</html>
